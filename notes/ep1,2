@@ -1,0 +1,92 @@
+npm is not stand for node package modular but it means everything else. It is used to manges packages.
+All packages come from npm . it is package manager, also known as dependencies. 
+
+package json- configuration file for npm, Json file
+
+Add bundler- bundle all coode so shift to production 
+A bundler is a tool that takes all your JavaScript code, along with any other assets like CSS or images, and combines them into a single file (or a few files) that can be served to the browser
+webpack bundler
+parcel
+vite
+
+create-react-app uses webpack bundler and babel behind the scene.
+two types of packages or dependencies
+one is dev dependcy- required in development phase
+general - use in production as well 
+npm install -D parcel- we are installing parcel from npm
+
+caret ^ - upggrade minor and patch e.g 2.3.8 to 2.x.x
+tild ~ tild only upgrade patch version 2.3.8(major.minor.patch) to 2.3.x
+patch-
+A “repair job” for a piece of programming; also known as a “fix”. A patch is the immediate solution to an identified problem that is provided to users;
+
+diff bw package.json - track of which version installed approx version usingg ^ and ~
+package.lock.json - keep a track or record of exact version 
+node moducles- actual data of depencies- database where all data exist
+
+transitive dependcy- e.g if parcel, it has multiple ddepencies
+
+parcel create va servrer to us e.g localhost npx parcel index.html. build development
+
+npx- executing package
+
+ways to get react into project - using npm or cdn(cdn not preffered way)
+
+type module= not normal JS understand import export
+
+automatic reload browser whenever changes
+
+#parcel benefits-  dev build, local server, HMR- hot module replacement(refresh browserr), file watching alogrithim- built in c++,
+   faster build because of caching,
+image optimization
+minification of files
+bundling for production
+compress your files
+code splitting
+consitent hashing
+differential bundling- support old nd multiple browsers
+dignostaic
+error handling
+https
+tree shaking algo- remove unused code -
+different dev and prood build (npx parcel build index.html)
+
+browserlist- used for making prject compatible with older versionds
+,
+  "browserslist" : [
+    "last 2 versions",
+    "last 2 Chrome version"
+  ]
+
+  npm start or npm run start
+
+  it is not a part of react - JSX- javascript syntax- that make life easier of developers instead of creating react elements
+  we can write react without JSX
+  JSx different than html. ITs html-like syntax
+  JSx is not js code
+
+  react.createElement('h1', {'id':'hj'}, 'this is chidren);
+
+  browsers or js engine doesn't understand JSX
+   only understand es6 ecmascript(pure javascript)
+   bcz of parcel - broswers returning jsx- JSX code transpiled before goes to js engine
+  parcel installed babel - babel is JS compiler, that convert jsx to react.create element code so normal browser can understand
+jsx-react.createElement- js object-html
+
+jsx= camelcase
+
+everything is component in react
+
+2 types- class based - old way of writing code - uses JS classes
+and functional based - new way of writing code - uses JS functions
+
+react functional component- just normal JS function which returns some jsx
+component composition - when we call any functioncal component in othher functional coomponent. e.g we call <Title /> in <heading />
+
+in jsx- write {}- where we can write any js code
+
+cross site scripting- attacker can send some data through apis and acess data 
+Cross-site scripting (XSS) is an attack in which an attacker injects malicious executable scripts into the code of a trusted application or website. 
+jsx take care of this - it sanitizes the data
+
+we can read code using jsx
