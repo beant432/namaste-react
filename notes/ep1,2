@@ -90,3 +90,147 @@ Cross-site scripting (XSS) is an attack in which an attacker injects malicious e
 jsx take care of this - it sanitizes the data
 
 we can read code using jsx
+we can use css in react  
+
+// const Parent = React.createElement('div', { id: 'parent' }, [
+//     React.createElement('div', { id: 'child' }, [
+//         React.createElement('h1', { id: 'h1' }, 'I am h1 tag'),
+//         React.createElement('h2', { id: 'h2' }, 'I am h2 tag')
+//     ]),
+//     React.createElement('div', { id: 'child2' }, [
+//         React.createElement('h1', { id: 'h1' }, 'I am hs1 tag'),
+//         React.createElement('h2', { id: 'h2' }, 'I am h2 tag')
+//     ])
+// ]);
+// this is when JSX comes
+
+const heading = React.createElement(
+    'h1',
+    { id: 'heading' },
+    'Hello world from react'
+); //return object. react element using core react
+
+const jsxheading = <h1>heading from jsx</h1>; // also return object nor,ally its react element
+
+const Title = () => <h1>Title</h1>
+
+
+// React functional component // that return some jsx or react element
+const HeadingComponent = () => {
+    return (
+        <>
+            <Title />
+            {Title()}
+            <h1>Heading component</h1>
+        </>
+    );
+    
+}
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// // root.render(heading); //render convert object to html
+// root.render(<HeadingComponent />) // render like this 
+
+props are properties - we can pass data from one component to another
+
+config driven UI-  controlling UI configs by backend // ui is driven by config
+
+Config-driven UI is a technique that allows you to create user interfaces based on a configuration file, such as JSON, or a TypeScript file that defines the layout and content of the UI components. This can be useful for creating dynamic and customizable UIs without hard coding them
+Configuration-driven UI, also known as config-driven UI or configuration-based UI - When you build real a world application so you want should your website work in many country or many place we control our fontend it is known as using Config-Driven UI . API or Backend Driven which is data Comming from API.
+
+array join- const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// Expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// Expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// Expected output: "Fire-Air-Water"
+
+// optional chaining ?. The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined
+
+keys - without keys if we add any item then it cleans container and re-render
+to identify uniquely a key is the only thing React uses to identify DOM elements.
+some people use as index as key- that is incorrect way
+
+react uses- large application less code
+
+never use hardcoded data in components
+
+2 types oof export and imports
+named and default expoort- by default file can export only one thing - no need to use {} export default component
+named is used when mu;tiple things need to be exported - used {} while importing- export const component;
+
+But you can use one or both of them in the same file. A file can have no more than one default export, but it can have as many named exports as you like
+
+react is fast and efficient in dom manuplation
+
+react hooks- normal js function that has some logic written by react
+useState- super powerful state variable- to manabge state
+const[data, setData]=useState("")
+data- state variable
+setData-function - use to uodate data
+"" default value
+react keep track track of these elements
+
+when state variable updates, react will re-render the component
+keeps UI sync with data
+
+react is only good at dom manuplication= 
+
+
+react use reconsiliation alogrithim (known as React fiber in react 16)- to update dom
+virtual dom - it is object representation of actual DOM. it is kind of normal javascript object
+virtual dom {{}}
+actual dom <div><div></div></div>
+
+diff algo- find out the difference bw current and earlier (old and new) virtual dom
+reconciliation
+The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+update
+A change in the data used to render a React app. Usually the result of `setState`. Eventually results in a re-render.
+
+Mono lith Arcitecture - huge big project with small api, UI(JS pages), authentication, database, notification
+micro services - different services for different apis, e.g service for backend, service for UI, service for ddata- then combine together - forms big app known as
+seperation of concerns, and single responsibilty principle
+
+ep 6
+useEffect- take 2 arguments useEffect(()={}, []);- it called after as soon as component rendered
+()=>{} call back function
+[]- dependcy array
+
+fetch return a promise we can use async await orr then catch
+
+learn cors- 
+shimmer ui- fake content till data. is loaded
+
+whenever state variable updates react tragiiers a reconciliation process(re-renders the component)
+re-renders the component means UI is updated- find difference bw new virtual and older virtual dom
+e.g onchange only updates input field whole body component being re-rendered
+
+.includes check if input has some data
+before find toLowercase is used
+
+
+Episode 7- best practices
+useEffect hook- use 2 arguments, 1 is call back function . 2 is dependcy array - 
+called after rendering page
+2 one is not mandatory
+
+if no dependcy array- useEffect is called on every component render 
+if empty [] dependencies array - called only on initial render just once
+if something in array= called whenever dependcy change or updated
+
+useState- never call useState outside component- used  for creating local state variables
+called on top, never create inside if else, for loop, nested functions
+
+Routing= use react router dom
+ruting config in app.js createBrowserRouter, RouterProvider from 'react-router-dom'
+
+createBrowserRouter is list of path createBrowserRouter([{path:'/', element:<AppLayout />}, ])
+
+rafce
+react-router dom gives us some hook useRouteError for errors const err=useRouteError();
+
+children route
