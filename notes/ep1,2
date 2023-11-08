@@ -130,6 +130,8 @@ const HeadingComponent = () => {
 // // root.render(heading); //render convert object to html
 // root.render(<HeadingComponent />) // render like this 
 
+
+
 props are properties - we can pass data from one component to another
 
 config driven UI-  controlling UI configs by backend // ui is driven by config
@@ -226,11 +228,88 @@ useState- never call useState outside component- used  for creating local state 
 called on top, never create inside if else, for loop, nested functions
 
 Routing= use react router dom
-ruting config in app.js createBrowserRouter, RouterProvider from 'react-router-dom'
+ruting config in app.js createBrowserRouter, RouterProvider ,Outlet from 'react-router-dom'
 
 createBrowserRouter is list of path createBrowserRouter([{path:'/', element:<AppLayout />}, ])
 
 rafce
 react-router dom gives us some hook useRouteError for errors const err=useRouteError();
 
-children route
+children route- outlet
+
+never use<a> tag</a> in react for routing- bcz whole page get refreshed
+we camn navigate without reloadimg whole page- we will use link that is coming from react router dom
+we use to ="" in link instead of href whole page won;t get refreshed or reload
+that why its know as SPA= single page application- not reloading, just refreshing componentr
+one page=component change in spa
+
+two types opf routing in web app
+client side routing- all code loaded once,- doesn't make any network call to fetch page
+server side routing- whole page get refreshed
+
+how to different routing for different restayrants=
+
+useParams from 'react-routerdom'
+
+///ep 8
+class based components-which has render method that returns jsx code
+react.component is a class present in react
+
+how we can pass props= we will create contrustoor to receive props, always have too use super(proops)
+The super keyword is used to call the constructor of its parent class to access the parent's properties and methods. 
+this.proops.name
+
+how we create state in class - update ui 
+loading or mounting or calling or invoking
+
+loading class component=creating a new instance- this constuctor is called
+in constructor we can create props and state this.state={
+  count:0,count2
+}
+in state object we can create multiple varibles
+
+how to update state variables - we can't update state variable directly in code e.g count=count+1
+it gives a function this.setState({count:this.state.count+1})
+
+what are react componets lifecycle methods- 
+how mounted word is used- how component is loaded
+loading componemt to web page- mounting- 
+first constructor called then render
+
+componentDidMount(){} - called after constructore, render- component is alrray mounted on web page
+used to make api calls
+
+2 instances of same class if same component is called twice- then componedidmount called after consttucror amd render
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ 
+
+react has 2 pahses - render and commit phhase
+render- constructor amd render() called
+react updates dom
+commit - componentdidmount called
+
+dom updated in single batch
+
+how we can make api calls in class component - we can make componedidmount as async functioon
+mounting- constructor amd render() - updates dom - component did mount
+updating- render()- updates dom- component did mount
+unmounting- when it will removing from ui- when we go to new page
+
+componentdidupdate- if state changes the it will called
+component will unmount- calls when leaving page
+
+
+wwe can return function from useeffect for unmounting
+
+
+ep 9-
+custom hook- make code more modular
+single respoonsiblity principle-each component has single responsibilty
+modulartity- split code into smalle chuncks code
+
+hook- just utility function- helper function
+
+//chunking or code splitting dynamic bundling, lazy loading(on demand loading)-dynamic impoort-  divide code into chunks-break down app code into smaller
+
+lazy(()=>{import('path')}) and wrap content in suspensse
+suspense takes fallback

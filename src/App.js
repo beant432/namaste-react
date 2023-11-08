@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import Body from './components/Body';
 import Header from './components/Header';
-import AboutUs from './components/AboutUs';
+// import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
-import { createBrowserRouter , RouterProvider} from 'react-router-dom';
+import { createBrowserRouter , Outlet, RouterProvider} from 'react-router-dom';
 import Error from './components/Error';
+import ResturantMenu from './components/ResturantMenu';
+import Shimmer from './components/Shimmer';
 
 /*
 Header - logo, navitem,
@@ -15,29 +17,43 @@ footer - copyright, privacy, links, address
 
 //main is top level coomponet- 
 */
-
+const AboutUs = lazy(() => import('./components/AboutUs') );
 const App = () => {
     return (
         <div className="app">
             <Header />
-            <Body />
+            <Outlet />
         </div>
     );
 }
 const appRouter = createBrowserRouter([
     {
         path: '/',
-        element:<App />,
+        element: <App />,
+        children: [
+            {
+                path: '/',
+                element: <Body />,
+            },
+            {
+                path: '/about',
+                element: <Suspense fallback={<Shimmer />}>
+                     <h2>Preview</h2>
+                    <AboutUs />
+                </Suspense>,
+            },
+            {
+                path: '/contact',
+                element: <ContactUs />,
+            },
+            {
+                path: '/restaurants/:resId',
+                element: <ResturantMenu />,
+            }
+        ],
         errorElement: <Error />,
     },
-     {
-        path: '/about',
-        element:<AboutUs />,
-     },
-      {
-        path: '/contact',
-        element:<ContactUs />,
-    }
-])
+     
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={appRouter} />);

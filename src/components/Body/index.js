@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import Filter from './Filter';
 import './index.css';
 import Shimmer from '../Shimmer';
+import { Link } from 'react-router-dom';
 
 export default function Body() {
     const arr = useState([]);
@@ -49,7 +50,7 @@ export default function Body() {
                 <div className="res-container">
                     {filteredList.map((ele) => {
                         return (
-                            <ResturantCard resData={ele} key={ele.info.id} />
+                            <Link to={"restaurants/"+ele.info.id } key={ele.info.id}><ResturantCard resData={ele}  /></Link>
                         )
                     })}
                 
