@@ -313,3 +313,5 @@ hook- just utility function- helper function
 
 lazy(()=>{import('path')}) and wrap content in suspensse
 suspense takes fallback
+
+tailwind css-

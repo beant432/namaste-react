@@ -1,9 +1,0 @@
-.shimmer-container{
-    display: flex;
-}
-.shimmer-card{
-    width:200px;
-    height:400px;
-    margin: 20px;
-    background-color: lightgray;
-}
