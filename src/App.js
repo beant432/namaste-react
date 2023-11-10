@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import Body from './components/Body';
 import Header from './components/Header';
@@ -8,6 +8,7 @@ import { createBrowserRouter , Outlet, RouterProvider} from 'react-router-dom';
 import Error from './components/Error';
 import ResturantMenu from './components/ResturantMenu';
 import Shimmer from './components/Shimmer';
+import UserContext from './utils/UserContext';
 
 /*
 Header - logo, navitem,
@@ -19,10 +20,21 @@ footer - copyright, privacy, links, address
 */
 const AboutUs = lazy(() => import('./components/AboutUs') );
 const App = () => {
+    // const { loggedInUser } = useContext(UserContext);
+    const [userName, setUserName] = useState("");
+
+    useEffect(() => {
+        const data = {
+            name:"binny"
+        }
+        setUserName(data.name);
+    },[])
     return (
         <div className="app">
+            <UserContext.Provider value={{loggedInUser:userName, setUserName}} >
             <Header />
             <Outlet />
+            </UserContext.Provider>
         </div>
     );
 }

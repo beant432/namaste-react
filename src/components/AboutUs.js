@@ -1,6 +1,7 @@
 import React from 'react'
 import UserClass from './UserClass.js';
 import { Component } from 'react';
+import UserContext from '../utils/UserContext.js';
 class AboutUs extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +12,8 @@ class AboutUs extends Component {
          console.log('parent comoponent did mount called');
     }
     render() {
-        console.log('parent render called')
+        console.log('parent render called');
+        
         return (
             <div>
                 <h1>About US</h1>

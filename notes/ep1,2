@@ -315,3 +315,32 @@ lazy(()=>{import('path')}) and wrap content in suspensse
 suspense takes fallback
 
 tailwind css-
+
+ep-11
+higher order components- function that takes a component and enhances and return a component
+
+react have 2c layers - UI and data layer (consists of state, props)to manage data - 
+comtrolled and uncontrolled component - //controlled component bcz parent ResturantMenu is controlling /don't have its own state
+
+
+lifting the state up-giving access to parent- when parent controll children
+
+react devtools-
+
+can we modify state varible of parent via child= not directly possible, 
+prop drilling- in react data flow in one direction top to bottom parent to children - propblem of passing props - react gives us context- it solves problemm of props drilling
+we can use context in anywhere - context is like global thing- when we want data at multiple places
+
+react gives helper function createContext-
+we can use hook (useContext) too get context
+
+when data flow from - parent=>chil=child=child
+if we want pass data from children to parents- 
+
+how we can access hook in class component <UserContext.consumer>{data=()=>{}}
+to update context=context provider
+
+we can use mutile nested context
+
+// ep 12
+how to manage data using redux

@@ -31,3 +31,14 @@ export default function ResturantCard(props) {
     </div>
   );
 }
+
+export const withPromtedLabelRestaurant = (ResturantCard) => {
+    return (props) => {
+        return (
+            <>
+                <label className="absolute bg-slate-500 text-white rounded-lg m-2 p-2">Veg</label>
+                <ResturantCard {...props} />
+            </>
+        );
+    }
+}
