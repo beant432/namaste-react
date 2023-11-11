@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../store/cartSlice";
 
 const ItemList = ({ list }) => {
+    const dispatch = useDispatch();
+    const handleAddItem = (item) => {
+        dispatch(addItem(item))
+    }
     return (
         
         <div className="">
@@ -15,7 +21,7 @@ const ItemList = ({ list }) => {
                     
                     <div className="flex flex-column m-2 text-right w-3/12">
                             <img className="w-full h-48 object-cover" src={CDN_URL + imageId} />
-                            <button>Add +</button>
+                            <button onClick={()=>handleAddItem(t)}>Add +</button>
                     </div>
                 </div>
                 )

@@ -9,6 +9,10 @@ import Error from './components/Error';
 import ResturantMenu from './components/ResturantMenu';
 import Shimmer from './components/Shimmer';
 import UserContext from './utils/UserContext';
+import appStore from './store/appStore';
+import Cart from './components/Cart';
+import { Provider } from 'react-redux';
+
 
 /*
 Header - logo, navitem,
@@ -31,10 +35,12 @@ const App = () => {
     },[])
     return (
         <div className="app">
-            <UserContext.Provider value={{loggedInUser:userName, setUserName}} >
-            <Header />
-            <Outlet />
-            </UserContext.Provider>
+            <Provider store={appStore}>
+                <UserContext.Provider value={{ loggedInUser: userName, setUserName }} >
+                    <Header />
+                    <Outlet />
+                </UserContext.Provider>
+            </Provider>
         </div>
     );
 }
@@ -61,7 +67,12 @@ const appRouter = createBrowserRouter([
             {
                 path: '/restaurants/:resId',
                 element: <ResturantMenu />,
+            },
+            {
+                path: '/cart',
+                element:<Cart />
             }
+
         ],
         errorElement: <Error />,
     },

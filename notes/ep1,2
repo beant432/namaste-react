@@ -343,4 +343,49 @@ to update context=context provider
 we can use mutile nested context
 
 // ep 12
-how to manage data using redux
+how to manage data stand  using redux
+
+redux and react are different library redux,zustand, redux offer easy debugging
+react-redeux - from react renfdex
+redux toolkit(RTK)- from redux- standard way to write redux logic RTK
+
+store-any componrnt can access data- it has slices in redux store- to keep data seperate
+we can't directly mopdify store- we need dispatch and action
+we click on add it -> it dispatch an (action)- it call function(this is known as reducer i.e reducer function)- then this function modify cart slice in store
+
+to read data from cart sluce - we can use selector(means subscriping to the store)- it will give data to react component- 
+
+whenever store data change- it automatically update data of cart
+
+// redux toolkit
+- 1. install libraries- @reduxjs/toolkit and react-redux
+- 2. build our store - we will use configureStore() impored from @reduxjs/toolkit
+- 3. onnect our store to our app (make a bridge)- import provider from react-redux and wrap app.js into Provider and pass store as props
+- 4. create a cart slice to add items to the cart- createSlice() it take configuration {name of slice and initial state} and reducers (an object of action and reducer function) 
+- 5. then dispatch an action on click of add button
+- 6. read data using selector - selector is hook
+
+interview Questions
+
+onClick={hhandleClick(item)}
+onClick={()=>hhandleClick(item)}
+onClick={hhandleClick}
+
+when we use selector- make sure you subscribing right portion to the store- it imporves perfomance
+
+in store there is big one reducer it has multiple slice reducers i.e . reducer 
+
+in slice- multiple small reducers function i.e. reducers
+
+while exporting we export only one big reducer
+
+in vanilla or older redux- don't mutate state, returning was mandatory
+
+we have to mutate state in redux tooklit- either mutate existing state, or return new state
+
+Immer- redux uses to find differnece bw mutatable and imutatable current and new state
+
+redux dev tools- rtk query(to bfetch data)*(earlier we use read about middlware, redux thunk, async, )
+
+
+
