@@ -9,11 +9,11 @@ const ItemList = ({ list }) => {
     }
     return (
         
-        <div className="">
+        <div>
             {list.map((t) => {
                 const { name, price, description, imageId, id } = t.card?.info;
                 return (
-                <div className="border-b-2 border-gray-100 flex justify-between m-2 p-4 " key={id}>
+                <div data-testid="fooditems" className="border-b-2 border-gray-100 flex justify-between m-2 p-4 " key={id}>
                     <div className="w-9/12"><h1 className="text-sm">{name}  </h1>
                         <h1 className="text-sm"> Rs. {price / 100}</h1>
                         <p className="text-xs">{description}</p>

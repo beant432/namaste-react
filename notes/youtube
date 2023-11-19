@@ -1,0 +1,12 @@
+Steps to build any project
+1. Requirements - 5 min
+
+- features
+- tech stack- which framworks for UI annd data layer react with tailwind, redux, react-router-dom for routing, which bundler, jest testing library
+-
+
+2. planning - 5 min
+- add header, sidebar, body
+
+
+npx create-react-app packageName

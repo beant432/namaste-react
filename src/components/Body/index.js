@@ -15,8 +15,9 @@ export default function Body() {
   const [filteredList, setFilteredList] = useState([]);
   const { loggedInUser, setUserName } = useContext(UserContext);
   const filterByRating = () => {
-    let val = dataList.filter((ele) => ele.info?.avgRating > 4);
-    setDataList(val);
+    let val = dataList.filter(ele => ele?.info?.avgRating > 4 );
+    console.log(val)
+    setFilteredList(val);
   };
     
     const ResturantWithPromoted = withPromtedLabelRestaurant(ResturantCard);
@@ -47,7 +48,6 @@ export default function Body() {
     setFilteredList(val);
     setLoading(false);
   };
-    console.log("filtered", filteredList);
   { filteredList.length === 0 && <Shimmer /> };
   
   return (
@@ -60,6 +60,7 @@ export default function Body() {
             placeholder="Search any food item ..."
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
+            data-testid="searchInput"
           />
           <button
             type="button"
@@ -78,7 +79,7 @@ export default function Body() {
           Filter by top Rating
         </button>
         <div>
-        <input className="h-10 p-3 border border-gray-200" value={loggedInUser} onChange={(e)=>{setUserName(e.target.value)}}/>
+        <input data-testid="userInput" className="h-10 p-3 border border-gray-200" value={loggedInUser} onChange={(e)=>{setUserName(e.target.value)}}/>
       </div>
       </div>
       

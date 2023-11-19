@@ -1,0 +1,78 @@
+{
+    "info": {
+        "id": "19416",
+        "name": "Subway",
+        "cloudinaryImageId": "1ace5fa65eff3e1223feb696c956b38b",
+        "locality": "Qutab Plaza Market",
+        "areaName": "DLF Phase 1",
+        "costForTwo": "₹350 for two",
+        "cuisines": [
+            "Salads",
+            "Snacks",
+            "Desserts",
+            "Beverages"
+        ],
+        "avgRating": 4,
+        "feeDetails": {
+            "restaurantId": "19416",
+            "fees": [
+                {
+                    "name": "BASE_DISTANCE",
+                    "fee": 10200
+                },
+                {
+                    "name": "BASE_TIME"
+                },
+                {
+                    "name": "ANCILLARY_SURGE_FEE"
+                }
+            ],
+            "totalFee": 10200
+        },
+        "parentId": "2",
+        "avgRatingString": "4.0",
+        "totalRatingsString": "10K+",
+        "sla": {
+            "deliveryTime": 36,
+            "lastMileTravel": 8.8,
+            "serviceability": "SERVICEABLE",
+            "slaString": "36 mins",
+            "lastMileTravelString": "8.8 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-11-15 05:00:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "40% OFF",
+            "subHeader": "UPTO ₹80"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/subway-qutab-plaza-market-dlf-phase-1-gurgaon-19416",
+        "type": "WEBLINK"
+    }
+}

@@ -388,4 +388,57 @@ Immer- redux uses to find differnece bw mutatable and imutatable current and new
 redux dev tools- rtk query(to bfetch data)*(earlier we use read about middlware, redux thunk, async, )
 
 
+ep 13 test cases
+different type of test (dveloper)
+- Unit testing- wheere we test small part of code or component in isolation
+- integartion testing- where we want to test feature 
+- end to end testing
+
+install
+- react testing library- This library is built on top of DOM Testing Library which is where most of the logic behind the queries is.
+- jest- javascript testing library
+- babel
+- babelconfig.js
+- parcelrc file - to majer babel work and disable default babel transpilation
+
+- jest configuration npx jest --init we will use jsdom
+install jsdom library
+- testing library jsdom
+
+- test.js
+-.test.ts
+- .spec.js
+- .spect.ts
+- __namre__ is known as dunder 
+
+    ///assertion- an assertion is just a Boolean expression. It contains a true and false binary. 
+
+//unit testing
+
+1 use render() to render component to jsdom before testing component
+we will use screen and render from react testingg library
+
+screen., tobeinthedocument()- check if heading exist in document or not
+
+jsx isn't enabled for testing, we need to add babel preset-react
+
+it and test are same in test file
+
+screen.getAllByRole("textbox") returrns react element (object)
+
+we can use decribe()
+
+
+// Integration testing- multoiple component work together
+
+watch-test jest --watch
+search functionality
+
+to use fetch or state update, wrap render in act method
+act from react-dom/test-utils
+
+beforeAll(()=>{console.log('before all test case')});
+    beforeEach(() => { console.log('before each test case') });
+    afterAll(() => { console.log('after all') });
+    afterEach(() => { console.log('after each') });
 

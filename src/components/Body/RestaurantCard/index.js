@@ -15,7 +15,7 @@ export default function ResturantCard(props) {
     sla,
   } = resData?.info;
   return (
-    <div className="border border-solid mx-5 my-3 py-2 w-64 h-[28rem] bg-gray-100 hover:bg-gray-200 overflow-scroll">
+    <div data-testid="resCard" className="border border-solid mx-5 my-3 py-2 w-64 h-[28rem] bg-gray-100 hover:bg-gray-200 overflow-scroll" >
       <img
         className="res-image w-72 p-4 h-[15rem] rounded-3xl"
         src={CDN_URL + cloudinaryImageId}
